@@ -114,12 +114,12 @@ body.reading-mode {
   cursor: pointer;
   background-color: transparent;
   transition: transform 0.3s ease;
-  position: relative;
+  position: relative; /* start relative so it sits in the container */
 }
 
 /* YES BUTTON */
 .yes-btn {
-  background-image: url("yes.png");
+  background-image: url("./yes.png"); /* note the ./ for GitHub */
 }
 
 .yes-btn:hover {
@@ -147,8 +147,8 @@ body.reading-mode {
 
 /* NO BUTTON */
 .no-btn {
-  background-image: url("no.png");
-  position: absolute;
+  background-image: url("./no.png"); /* note the ./ for GitHub */
+  position: relative; /* start relative so it centers, becomes absolute on hover */
 }
 
 /* Shake animation */
@@ -216,12 +216,15 @@ body.reading-mode {
 
 <!-- PAGE 3 -->
 <div class="page" id="page3">
-  <div class="card" style="opacity:1; transform:scale(1); position:relative;">
+  <div class="card" style="opacity:1; transform:scale(1);">
     <h2>Will you be my Valentine?</h2>
-    <button id="yesBtn" class="image-btn yes-btn"></button>
-    <button id="noBtn" class="image-btn no-btn"></button>
+    <div class="btn-container">
+      <button id="yesBtn" class="image-btn yes-btn"></button>
+      <button id="noBtn" class="image-btn no-btn"></button>
+    </div>
   </div>
 </div>
+
 
 <!-- PAGE 4 -->
 <div class="page" id="page4">
@@ -293,3 +296,4 @@ setInterval(() => {
 
 </body>
 </html>
+
